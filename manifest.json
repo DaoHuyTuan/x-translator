@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Twitter Auto Translate",
+  "version": "1.0",
+  "description": "Tự động dịch các tweet trên Twitter sang tiếng Việt",
+  "permissions": ["activeTab", "storage"],
+  "config": {
+    "debug_mode": false
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.x.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
